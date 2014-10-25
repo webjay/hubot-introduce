@@ -1,6 +1,6 @@
 {
   "name": "hubot-introduce",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Introduction of users",
   "main": "index.coffee",
   "scripts": {

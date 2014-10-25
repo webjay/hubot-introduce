@@ -18,8 +18,7 @@ module.exports = (robot) ->
       return
     user = msg.message.user
     robot.brain.set 'intro-' + user.id, intro
-    msg.reply "Thank you #{user.name}, I will introduce you as:"
-    msg.reply intro
+    msg.reply "Thank you #{user.name}, I will introduce you as: #{intro}"
 
   robot.respond /introduce (?!me as )@?([\w .\-]+)\?*$/i, (msg) ->
     name = msg.match[1].trim()

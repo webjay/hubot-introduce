@@ -1,6 +1,8 @@
-# hubot introduce
+# Hubot Introduce
 
 Introduction of users.
+
+A [Hubot](https://hubot.github.com/) script.
 
 ## Commands
 

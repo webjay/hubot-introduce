@@ -2,8 +2,8 @@
 #   Introduction of users
 #
 # Commands:
-#   hubot introduce me as - Set your introduction
-#   hubot introduce @username - Get users introduction
+#   hubot introduce me as <introduction> - Set your introduction
+#   hubot introduce <username> - Get users introduction
 #
 # Author:
 #   webjay
@@ -11,7 +11,7 @@
 
 module.exports = (robot) ->
 
-  robot.respond /(?:please )intro(?:duce) me as (.*)/i, (msg) ->
+  robot.respond /introduce me as (.*)/i, (msg) ->
     intro = msg.match[1].trim()
     if not intro?
       msg.reply 'Your introduction is a bit too short.'
@@ -21,7 +21,7 @@ module.exports = (robot) ->
     msg.reply "Thank you #{user.name}, I will introduce you as:"
     msg.reply intro
 
-  robot.respond /(?:please )intro(?:duce) @?([\w .\-]+)\?*$/i, (msg) ->
+  robot.respond /introduce (?!me as )@?([\w .\-]+)\?*$/i, (msg) ->
     name = msg.match[1].trim()
     users = robot.brain.usersForFuzzyName(name)
     if users.length is 1

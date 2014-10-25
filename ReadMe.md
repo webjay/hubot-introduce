@@ -4,6 +4,10 @@ Introduction of users.
 
 A [Hubot](https://hubot.github.com/) script.
 
+## Install
+
+    npm install hubot-introduce --save
+
 ## Commands
 
 Set your introduction

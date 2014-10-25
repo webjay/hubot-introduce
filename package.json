@@ -1,0 +1,25 @@
+{
+  "name": "hubot-introduce",
+  "version": "1.0.0",
+  "description": "Introduction of users",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webjay/hubot-introduce.git"
+  },
+  "keywords": [
+    "hubot",
+    "whois",
+    "intro",
+    "introduction"
+  ],
+  "author": "Jacob Friis Saxberg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webjay/hubot-introduce/issues"
+  },
+  "homepage": "https://github.com/webjay/hubot-introduce"
+}

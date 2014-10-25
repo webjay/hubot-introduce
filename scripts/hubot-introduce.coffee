@@ -12,20 +12,23 @@
 module.exports = (robot) ->
 
   robot.respond /(?:please )intro(?:duce) me as (.*)/i, (msg) ->
-    about = msg.match[1].trim()
+    intro = msg.match[1].trim()
+    if not intro?
+      msg.reply 'Your introduction is a bit too short.'
+      return
     user = msg.message.user
-    robot.brain.set 'intro-' + user.id, about
-    msg.reply 'Thanks ' + user.name + ', I will introduce you as:'
-    msg.reply about
+    robot.brain.set 'intro-' + user.id, intro
+    msg.reply "Thank you #{user.name}, I will introduce you as:"
+    msg.reply intro
 
   robot.respond /(?:please )intro(?:duce) @?([\w .\-]+)\?*$/i, (msg) ->
     name = msg.match[1].trim()
     users = robot.brain.usersForFuzzyName(name)
     if users.length is 1
       user = users[0]
-      about = robot.brain.get 'intro-' + user.id
-      if about?
-        msg.reply about
+      intro = robot.brain.get 'intro-' + user.id
+      if intro?
+        msg.reply intro
       else
         msg.reply "I do not have an introduction of #{name} yet."
     else

@@ -6,8 +6,8 @@ Introduction of users.
 
 Set your introduction
 
-    hubot introduce me as [introduction text]
+    hubot introduce me as <introduction text>
 
 Get users introduction
     
-    hubot introduce [@username]
+    hubot introduce [@]<username>
